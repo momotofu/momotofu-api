@@ -1,4 +1,4 @@
 Flask >= 1.0.2
 sqlalchemy >= 1.2.7
 gunicorn >= 19.9.0
-flask-restful >= 0.2.12
+flask-restful >= 0.3.5
