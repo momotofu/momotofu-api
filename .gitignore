@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+
+package-lock.json
+
+node_modules/
+credentials/
+src/config.py
+config.json
+
+# remove for production
+app/static/images/*
+*.db
