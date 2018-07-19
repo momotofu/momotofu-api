@@ -13,6 +13,8 @@ def main(argv):
         from src.config import Config as config
         app = create_app(config=config)
 
+    PORT = os.environ['PORT'] if 'PORT' in os.environ.keys() else 5000
+
     app.run(host = '0.0.0.0', port=5000)
 
 if __name__ == '__main__':
