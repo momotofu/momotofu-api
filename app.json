@@ -1,0 +1,23 @@
+{
+  "name": "momotofu-api",
+  "description": "This app does one little thing, and does it well.",
+  "keywords": [
+  ],
+  "website": "",
+  "repository": "",
+  "logo": "",
+  "success_url": "",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "image": "heroku/python",
+  "addons": [
+  ],
+  "buildpacks": [
+  ],
+  "environments": {
+  }
+}
