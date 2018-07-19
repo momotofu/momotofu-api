@@ -1,8 +1,4 @@
-[packages]
 Flask = "*"
 sqlalchemy = "*"
 gunicorn = "*"
 flask-restful = "*"
-
-[requires]
-python_version = "3.6"
