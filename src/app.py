@@ -6,7 +6,7 @@ def create_app(config='dev'):
     Configure app object blueprints and global variables.
     """
     if config == 'dev':
-        from .src.config import DevelopmentConfig as dev_config
+        from config import DevelopmentConfig as dev_config
         app = configure_app(Flask(__name__), dev_config)
     else:
         app = configure_app(Flask(__name__), config)
