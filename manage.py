@@ -1,5 +1,5 @@
 from src.app import create_app
-from src.config import DevelopmentConfig as dev_config, Config as config
+# from src.config import DevelopmentConfig as dev_config, Config as config
 import sys
 import os
 
@@ -7,10 +7,10 @@ import os
 def main(argv):
     if '--debug' or '-d' in argv:
         # run debug mode for development
-        app = create_app(config=dev_config)
+        app = create_app()
     else:
         # run app for production
-        app = create_app(config=config)
+        app = create_app()
 
     PORT = os.environ['PORT'] if 'PORT' in os.environ.keys() else 5000
 
