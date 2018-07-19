@@ -1,13 +1,15 @@
 from flask import Flask
-from .config import Config as default_config
 from .utils.utils import get_session
 
-def create_app(config=None):
+def create_app(config='dev'):
     """
     Configure app object blueprints and global variables.
     """
-
-    app = configure_app(Flask(__name__), config)
+    if config == 'dev':
+        from .conf.config import DevelopmentConfig as dev_config
+        app = configure_app(Flask(__name__), dev_config)
+    else:
+        app = configure_app(Flask(__name__), config)
 
     # setup flask blueprints
     configure_blueprints(app)
@@ -16,11 +18,7 @@ def create_app(config=None):
 
 
 def configure_app(app, config_object=None):
-    if config_object:
-        app.config.from_object(config_object)
-    else:
-        app.config.from_object(default_config)
-
+    app.config.from_object(config_object)
     return app
 
 
