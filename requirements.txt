@@ -1,4 +1,4 @@
-Flask = "*"
-sqlalchemy = "*"
-gunicorn = "*"
-flask-restful = "*"
+Flask == "*"
+sqlalchemy == "*"
+gunicorn == "*"
+flask-restful == "*"
