@@ -1,5 +1,5 @@
 from flask import Flask
-from .config import Config as default_config
+# from .config import Config as default_config
 from .utils.utils import get_session
 
 def create_app(config=None):
@@ -16,10 +16,10 @@ def create_app(config=None):
 
 
 def configure_app(app, config_object=None):
-    if config_object:
-        app.config.from_object(config_object)
-    else:
-        app.config.from_object(default_config)
+    # if config_object:
+    app.config.from_object(config_object)
+    # else:
+        # app.config.from_object(default_config)
 
     return app
 
