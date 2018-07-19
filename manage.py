@@ -1,5 +1,5 @@
 from src.app import create_app
-# from src.config import DevelopmentConfig as dev_config, Config as config
+from src.config import DevelopmentConfig as dev_config, Config as config
 import sys
 import os
 
