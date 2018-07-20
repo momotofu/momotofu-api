@@ -1,7 +1,6 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Binary
 from sqlalchemy import UniqueConstraint
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
 from sqlalchemy import event
 from sqlalchemy.engine import Engine
