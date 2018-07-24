@@ -1,2 +1,2 @@
 # momotofu-api
-test
+An open source api for all things momotofu.
