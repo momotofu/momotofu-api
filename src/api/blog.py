@@ -8,13 +8,15 @@ class HelloWorld(Resource):
     def get(self, id=1):
         return { 'hello' : 'world %s ' % id }
 
-class ContactForm():
+class ContactForm(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('name', type=str)
         parser.add_argument('email', type=str)
         parser.add_argument('message', type=str)
         args = parser.parse_args()
+
+        return 'success', 201
 
 api.add_resource(ContactForm, '/recieveForm')
 api.add_resource(HelloWorld, '/', '/hello/<int:id>')
