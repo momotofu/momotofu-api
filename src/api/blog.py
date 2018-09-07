@@ -13,8 +13,8 @@ class ContactForm(Resource):
 
     def post(self):
         import yagmail
-        if 'EMAIL' in os.environ.keys() and 'EMAIL_PW' in os.environ.keys():
-            yag = yagmail.SMTP(os.environ['EMAIL'], os.environ['EMAIL_PW'])
+        if os.getenv('EMAIL') and os.getenv('EMAIL_PW'):
+            yag = yagmail.SMTP(os.getenv('EMAIL'), os.getenv('EMAIL_PW'))
         else:
             yag = yagmail.SMTP()
 
