@@ -10,13 +10,19 @@ class HelloWorld(Resource):
 
 class ContactForm(Resource):
     def post(self):
-        parser = reqparse.RequestParser()
-        parser.add_argument('name', type=str)
-        parser.add_argument('email', type=str)
-        parser.add_argument('message', type=str)
-        args = parser.parse_args()
+        try:
+            parser = reqparse.RequestParser()
+            parser.add_argument('name', type=str)
+            parser.add_argument('email', type=str)
+            parser.add_argument('message', type=str)
+            args = parser.parse_args()
+            raise
 
-        return 'success', 201
+            return args, 201, {'Access-Control-Allow-Origin': '*'}
+        except:
+            return 500
+
+
 
 api.add_resource(ContactForm, '/recieveForm')
 api.add_resource(HelloWorld, '/', '/hello/<int:id>')
