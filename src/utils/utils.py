@@ -4,6 +4,24 @@ from sqlalchemy.orm import sessionmaker
 from src.model import Base
 
 
+def get_cli_args():
+    """
+    Returns a dictionary of arguments passed to through the CLI.
+    """
+    import re
+    import sys
+
+    args = {}
+
+    for arg in sys.argv[1:]:
+      var = re.search('\-\-(.*)\=', arg)
+      var = variable.group(1)
+      value = re.search('\=(.*)', arg)
+      value = value.group(1)
+      args[variable] = value
+    return args
+
+
 def allowed_file(filename, config):
     return '.' in filename and \
             filename.rsplit('.', 1)[1].lower() in config['ALLOWED_EXTENSIONS']
