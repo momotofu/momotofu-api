@@ -4,7 +4,10 @@ import os
 
 args = get_cli_args()
 
-app = create_app(os.getenv('FLASK_CONFIG') or 'dev')
+if 'dev' in args.keys():
+    app = create_app('dev')
+else:
+    app = create_app(os.getenv('FLASK_CONFIG'))
 
 if __name__ == '__main__':
     app.run()
