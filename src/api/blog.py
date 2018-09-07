@@ -26,5 +26,5 @@ class ContactForm(Resource):
         return json, 201, {'Access-Control-Allow-Origin': '*'}
 
 
-api.add_resource(ContactForm, '/recieveForm')
+api.add_resource(ContactForm, '/receiveForm')
 api.add_resource(HelloWorld, '/', '/hello/<int:id>')
