@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, request
 from flask_restful import Api, Resource, url_for, reqparse
 
 blog_bp = Blueprint('blog', __name__)
@@ -10,17 +10,11 @@ class HelloWorld(Resource):
 
 class ContactForm(Resource):
     def post(self):
-        try:
-            parser = reqparse.RequestParser()
-            parser.add_argument('name', type=str)
-            parser.add_argument('email', type=str)
-            parser.add_argument('message', type=str)
-            args = parser.parse_args()
-            raise
+        json = request.get_json(force=True)
 
-            return args, 201, {'Access-Control-Allow-Origin': '*'}
-        except:
-            return 500
+        return json, 201, {'Access-Control-Allow-Origin': '*'}
+
+
 
 
 
