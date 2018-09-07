@@ -14,7 +14,7 @@ def get_cli_args():
     args = {}
 
     for arg in sys.argv[1:]:
-        var = re.search('\-\-(.*)[\=]?', arg)
+        var = re.search('\-\-([A-Za-z]*)', arg)
         var = var.group(1)
         value = re.search('\=(.*)', arg)
         value = value.group(1) if value else None
