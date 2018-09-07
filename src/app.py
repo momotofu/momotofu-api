@@ -9,7 +9,8 @@ def create_app(config='dev'):
         from .conf.config import DevelopmentConfig as dev_config
         app = configure_app(Flask(__name__), dev_config)
     else:
-        app = configure_app(Flask(__name__), config)
+        from .conf.config import ProdConfig
+        app = configure_app(Flask(__name__), ProdConfig)
 
     # setup flask blueprints
     configure_blueprints(app)
