@@ -23,7 +23,7 @@ class ContactForm(Resource):
         yag.send('mrkita.reece@gmail.com', 'FROM BLOG: %s' % json['email'],
                 contents)
 
-        return json, 201, {'Access-Control-Allow-Origin': '*'}
+        return 201, {'Access-Control-Allow-Origin': '*'}
 
 
 api.add_resource(ContactForm, '/receiveForm')
