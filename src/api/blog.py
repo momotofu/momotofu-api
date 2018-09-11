@@ -10,7 +10,6 @@ class HelloWorld(Resource):
         return { 'hello' : 'world %s ' % id }
 
 class ContactForm(Resource):
-
     def post(self):
         import yagmail
         if os.getenv('EMAIL') and os.getenv('EMAIL_PW'):
