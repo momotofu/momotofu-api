@@ -5,6 +5,7 @@ import os
 blog_bp = Blueprint('blog', __name__)
 api = Api(blog_bp)
 
+
 class HelloWorld(Resource):
     def get(self, id=1):
         return { 'hello' : 'world %s ' % id }
@@ -24,6 +25,6 @@ class ContactForm(Resource):
 
         return 201, {'Access-Control-Allow-Origin': '*'}
 
-
+    
 api.add_resource(ContactForm, '/receiveForm')
 api.add_resource(HelloWorld, '/', '/hello/<int:id>')
