@@ -25,8 +25,9 @@ def configure_app(app, config_object=None):
 
 def configure_blueprints(app):
     from .api.blog import blog_bp
+    from .subApps.freshFilms.index import films_bp
 
-    for blueprint in [blog_bp]:
+    for blueprint in [blog_bp, films_bp]:
         app.register_blueprint(blueprint)
 
     return app
