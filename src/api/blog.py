@@ -1,6 +1,6 @@
-from flask import Flask, Blueprint, request
+from flask import Flask, Blueprint, request, make_response
 from flask_restful import Api, Resource, url_for, reqparse
-import os
+import os, json
 
 blog_bp = Blueprint('blog', __name__)
 api = Api(blog_bp)
@@ -8,7 +8,9 @@ api = Api(blog_bp)
 
 class HelloWorld(Resource):
     def get(self, id=1):
-        return { 'hello' : 'world %s ' % id }
+        response = make_response(json.dumps({ 'hello' : 'world %s ' % id }))
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return response
 
 class ContactForm(Resource):
     def post(self):
@@ -25,6 +27,6 @@ class ContactForm(Resource):
 
         return 201, {'Access-Control-Allow-Origin': '*'}
 
-    
+
 api.add_resource(ContactForm, '/receiveForm')
 api.add_resource(HelloWorld, '/', '/hello/<int:id>')
