@@ -4,3 +4,6 @@ __pycache__/
 src/config.py
 config.json
 .env
+Pipfile
+Pipfile.lock
+.venv/
